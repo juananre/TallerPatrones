@@ -12,23 +12,28 @@ public class spwaner : MonoBehaviour
     private GameObject cilindor;
 
 
-
-    private void Update()
-    {
-
-    }
     private void newEsfera()
     {
-
+        esfera = factory.crearesfera();
+        esfera.transform.position = transform.position;
 
     }
     private void newcubo()
     {
-
+        cubo = factory.crearCubo();
+       cubo.transform.position = transform.position;
     }
     private void newcilindro()
     {
-
+        cilindor = factory.crearcilindro();
+        cilindor.transform.position = transform.position;
     }
+
+
+   private void genererador()
+    {
+        
+    }
+   
 
 }

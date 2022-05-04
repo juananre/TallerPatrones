@@ -6,7 +6,9 @@ public class Factory : MonoBehaviour
 {
     [SerializeField]
     private GameObject cube;
+    [SerializeField]
     private GameObject cilindro;
+    [SerializeField]
     private GameObject esfera;
 
 
@@ -20,6 +22,7 @@ public class Factory : MonoBehaviour
     public GameObject crearcilindro()
     {
         GameObject intance = Instantiate(cilindro);
+
 
         return intance;
     }
