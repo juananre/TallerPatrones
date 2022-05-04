@@ -416,10 +416,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 302434291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baebd908451de58469f0df1876d101b7, type: 3}
+  m_Script: {fileID: 11500000, guid: eaed102fc01ae5049be1406994a8a58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  factory: {fileID: 1936220582}
+  esfera: {fileID: 6287545963796720704, guid: ea116915ad69f2c48bbe4ff39f4656f3, type: 3}
+  cube: {fileID: -8082637474473586736, guid: 39323e4c4ed00fa448aaf214948324fa, type: 3}
+  cilindro: {fileID: 8139402007489155440, guid: cbdd39b6f2606ce42be60b2f71430a30, type: 3}
 --- !u!4 &302434293
 Transform:
   m_ObjectHideFlags: 0
@@ -428,11 +430,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302434291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.878498, y: -2.8976226, z: 3.748948}
+  m_LocalPosition: {x: 3.878498, y: 1.13, z: 3.748948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &306976226
 GameObject:
@@ -621,7 +623,7 @@ RectTransform:
   - {fileID: 1045939409}
   - {fileID: 292242966}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -705,7 +707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836197261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.3, z: -8.55}
+  m_LocalPosition: {x: 0, y: 2.39, z: -11.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -752,7 +754,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &901233803
 GameObject:
@@ -982,7 +984,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045939408
 GameObject:
@@ -1067,13 +1069,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 302434291}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 302434292}
+        m_TargetAssemblyTypeName: factory_obj, Assembly-CSharp
+        m_MethodName: creacion_cube
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 302434292}
+        m_TargetAssemblyTypeName: factory_obj, Assembly-CSharp
+        m_MethodName: creacion_Esfera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 302434292}
+        m_TargetAssemblyTypeName: factory_obj, Assembly-CSharp
+        m_MethodName: creacion_cilindro
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1181,51 +1207,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1936220581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1936220583}
-  - component: {fileID: 1936220582}
-  m_Layer: 0
-  m_Name: factory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1936220582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936220581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e9270da2eac3b4cb82f68b0a256ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 242189615148345815, guid: 39323e4c4ed00fa448aaf214948324fa, type: 3}
-  cilindro: {fileID: 8350771233287567787, guid: cbdd39b6f2606ce42be60b2f71430a30, type: 3}
-  esfera: {fileID: 2378295675847210430, guid: ea116915ad69f2c48bbe4ff39f4656f3, type: 3}
---- !u!4 &1936220583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936220581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.878498, y: -2.8976226, z: 3.748948}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

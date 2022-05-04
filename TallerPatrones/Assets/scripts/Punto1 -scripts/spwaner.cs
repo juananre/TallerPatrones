@@ -13,7 +13,7 @@ public class spwaner : MonoBehaviour
     private GameObject cubo;
     private GameObject cilindor;
 
-
+   
     private void newEsfera()
     {
         esfera = factory.crearesfera();
@@ -32,10 +32,8 @@ public class spwaner : MonoBehaviour
     }
 
 
-   private void genererador()
-    {
-        
-    }
+
+
    
 
 }

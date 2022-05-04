@@ -32,5 +32,8 @@ public class Factory : MonoBehaviour
 
         return intance;
     }
-
+    private void genererador()
+    {
+       
+    }
 }
