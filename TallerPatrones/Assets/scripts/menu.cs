@@ -23,6 +23,6 @@ public class menu : MonoBehaviour
     }
     public void salir()
     {
-        
+        Application.Quit();
     }
 }
