@@ -15,53 +15,62 @@ public class shot : MonoBehaviour
     public float shotrateTime;
 
     public int CaseShot =1;
+
+    public bool canShoot=true;
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-
-            switch (CaseShot)
+            if (canShoot) 
             {
-                case 1:
-                    if (Time.time > shotrateTime)
-                    {
-                        GameObject newbullet;
-                        newbullet = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
-                        newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
+                switch (CaseShot)
+                {
+                    case 1:
+                        if (Time.time > shotrateTime)
+                        {
+                            GameObject newbullet;
+                            newbullet = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
+                            newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
 
-                        shotrateTime = Time.time + shotrate;
-                        Destroy(newbullet, 1);
-                        
-                    }
-                    break;
+                            shotrateTime = Time.time + shotrate;
+                            Destroy(newbullet, 1);
 
-                case 2:
-                    if (Time.time > shotrateTime)
-                    {
-                        GameObject newbullet;
-                        newbullet = Instantiate(bullet2, spawnPoint.position, spawnPoint.rotation);
-                        newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
+                        }
+                        break;
 
-                        shotrateTime = Time.time + shotrate;
-                        Destroy(newbullet, 1);
+                    case 2:
+                        if (Time.time > shotrateTime)
+                        {
+                            GameObject newbullet;
+                            newbullet = Instantiate(bullet2, spawnPoint.position, spawnPoint.rotation);
+                            newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
 
-                    }
-                    break;
+                            shotrateTime = Time.time + shotrate;
 
-                case 3:
-                    if (Time.time > shotrateTime)
-                    {
-                        GameObject newbullet;
-                        newbullet = Instantiate(bullet3, spawnPoint.position, spawnPoint.rotation);
-                        newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
 
-                        shotrateTime = Time.time + shotrate;
-                        Destroy(newbullet, 1);
+                            Destroy(newbullet, 1);
 
-                    }
-                    break;
-                    
+                        }
+                        break;
+
+                    case 3:
+                        if (Time.time > shotrateTime)
+                        {
+                            GameObject newbullet;
+                            newbullet = Instantiate(bullet3, spawnPoint.position, spawnPoint.rotation);
+                            newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
+
+                            shotrateTime = Time.time + shotrate;
+                            Destroy(newbullet, 1);
+
+                        }
+                        break;
+
+                }
+
             }
+
+            
            
 
         }
