@@ -58,7 +58,10 @@ public class Muro_Colision : MonoBehaviour
             box.enabled = false;
             perso.canShoot = false;
         }
-
+        else if (collision.gameObject.tag=="bala3")
+        {
+            perso.InstanciateParticle();
+        }
     }
 
 }

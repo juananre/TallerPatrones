@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class shot : MonoBehaviour
 {
+    [SerializeField] ParticleSystem particula;
     public GameObject bullet;
     public GameObject bullet2;
     public GameObject bullet3;
@@ -83,5 +84,9 @@ public class shot : MonoBehaviour
             }
         }
         
+    }
+    public void InstanciateParticle()  
+    {
+        Instantiate(particula);
     }
 }
