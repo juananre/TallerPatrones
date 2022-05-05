@@ -29,27 +29,32 @@ public class shot : MonoBehaviour
                     case 1:
                         if (Time.time > shotrateTime)
                         {
-                            GameObject newbullet;
-                            newbullet = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
-                            newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
+                            GameObject bala = bulletPool.Instace.Requestbala("bala1");
+                            bala.transform.position = Vector3.zero;
+                            print(spawnPoint.position+" "+bala.transform.position);
+                            bala.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
 
+                            bala.transform.GetChild(0).gameObject.SetActive(true);
+                            bala.transform.GetChild(1).gameObject.SetActive(false);
+                            bala.transform.GetChild(2).gameObject.SetActive(false);
                             shotrateTime = Time.time + shotrate;
-                            Destroy(newbullet, 1);
 
+                            
                         }
                         break;
 
                     case 2:
                         if (Time.time > shotrateTime)
                         {
-                            GameObject newbullet;
-                            newbullet = Instantiate(bullet2, spawnPoint.position, spawnPoint.rotation);
-                            newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
+                            GameObject bala = bulletPool.Instace.Requestbala("bala2");
+                            bala.transform.position = spawnPoint.position;
+                            bala.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
 
+                            bala.transform.GetChild(0).gameObject.SetActive(false);
+                            bala.transform.GetChild(1).gameObject.SetActive(true);
+                            bala.transform.GetChild(2).gameObject.SetActive(false);
                             shotrateTime = Time.time + shotrate;
 
-
-                            Destroy(newbullet, 1);
 
                         }
                         break;
@@ -57,12 +62,14 @@ public class shot : MonoBehaviour
                     case 3:
                         if (Time.time > shotrateTime)
                         {
-                            GameObject newbullet;
-                            newbullet = Instantiate(bullet3, spawnPoint.position, spawnPoint.rotation);
-                            newbullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
+                            GameObject bala = bulletPool.Instace.Requestbala("bala3");
+                            bala.transform.position = spawnPoint.position;
+                            bala.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
 
+                            bala.transform.GetChild(0).gameObject.SetActive(false);
+                            bala.transform.GetChild(1).gameObject.SetActive(false);
+                            bala.transform.GetChild(2).gameObject.SetActive(true);
                             shotrateTime = Time.time + shotrate;
-                            Destroy(newbullet, 1);
 
                         }
                         break;

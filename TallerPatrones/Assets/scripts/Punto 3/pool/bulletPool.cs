@@ -12,7 +12,7 @@ public class bulletPool : MonoBehaviour
     public static bulletPool Instace { get { return instance; } }
     private void Awake()
     {
-        if (instance)
+        if (instance==null)
         {
             instance = this;
         }
@@ -23,15 +23,35 @@ public class bulletPool : MonoBehaviour
     }
     void Start()
     {
-        for(int i = 0; i < poolsize; i++) 
+        Addbalapool(poolsize);
+    }
+    private void Addbalapool(int amount)
+    {
+        for (int i = 0; i < poolsize; i++)
         {
-            GameObject bala = Instantiate(bala1);
+            GameObject bala = Instantiate(bala1,new Vector3(-10,-10,-10),Quaternion.identity);
             bala.SetActive(false);
             bala1list.Add(bala);
-            bala.transform.parent=transform;
+            //bala.transform.parent = transform;
         }
-        
     }
+    public GameObject Requestbala(string tagdeBala)
+    {
+        for (int i = 0; i < bala1list.Count; i++)
+        {
+            if (!bala1list[i].activeSelf)
+            {
+                
+                bala1list[i].SetActive(true);
+                bala1list[i].tag = tagdeBala;
+                return bala1list[i];
+            }
+        }
+        return null;
+    }
+    public void reciclar(GameObject bala)
+    {
+        bala.SetActive(false);
 
-
+    }
 }

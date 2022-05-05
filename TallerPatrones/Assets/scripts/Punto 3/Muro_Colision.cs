@@ -50,6 +50,7 @@ public class Muro_Colision : MonoBehaviour
         {
             print("holi");
 
+            bulletPool.Instace.reciclar(collision.gameObject);
         }
         //caso 2
         else if(collision.gameObject.tag == "bala2")
@@ -57,10 +58,12 @@ public class Muro_Colision : MonoBehaviour
             inico = true;
             box.enabled = false;
             perso.canShoot = false;
+            bulletPool.Instace.reciclar(collision.gameObject);
         }
         else if (collision.gameObject.tag=="bala3")
         {
             perso.InstanciateParticle();
+            bulletPool.Instace.reciclar(collision.gameObject);
         }
     }
 
