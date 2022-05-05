@@ -30,10 +30,10 @@ public class shot : MonoBehaviour
                         if (Time.time > shotrateTime)
                         {
                             GameObject bala = bulletPool.Instace.Requestbala("bala1");
-                            bala.transform.position = Vector3.zero;
+                            bala.transform.position = spawnPoint.position;
                             print(spawnPoint.position+" "+bala.transform.position);
                             bala.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shotforce);
-
+                            print(bala.transform.childCount);
                             bala.transform.GetChild(0).gameObject.SetActive(true);
                             bala.transform.GetChild(1).gameObject.SetActive(false);
                             bala.transform.GetChild(2).gameObject.SetActive(false);
